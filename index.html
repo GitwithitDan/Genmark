@@ -251,6 +251,12 @@
     background:rgba(31,111,92,0.08);
   }
   .option-row .opt-desc{font-family:'IBM Plex Sans', sans-serif; color:var(--ink-soft); font-size:11.5px;}
+  .option-row label:has(input:disabled){
+    opacity:0.4;
+    cursor:not-allowed;
+    background:repeating-linear-gradient(45deg, var(--paper-2), var(--paper-2) 4px, var(--white) 4px, var(--white) 8px);
+  }
+  .option-row label:has(input:disabled) *{cursor:not-allowed;}
 
   .special-toggle{margin-top:16px; font-size:13px; display:flex; align-items:center; gap:8px;}
 
@@ -458,7 +464,7 @@
             <div class="option-row" id="curation-options">
               <label><input type="radio" name="curation" value="2" checked> 2 <span class="opt-desc">Human-refined</span></label>
               <label><input type="radio" name="curation" value="1"> 1 <span class="opt-desc">Human-checked</span></label>
-              <label><input type="radio" name="curation" value="0"> 0 <span class="opt-desc">Unreviewed</span></label>
+              <label><input type="radio" name="curation" value="0"> 0 <span class="opt-desc">Unreviewed (n/a for Collaborative)</span></label>
             </div>
           </fieldset>
         </div>
@@ -605,6 +611,9 @@
   var outMeta = document.getElementById('out-meta');
   var outCitation = document.getElementById('out-citation');
 
+  var curationZero = document.querySelector('input[name="curation"][value="0"]');
+  var curationOne = document.querySelector('input[name="curation"][value="1"]');
+
   function currentCode(){
     if(specialToggle.checked){
       var checkedSpecial = document.querySelector('input[name="special"]:checked');
@@ -615,7 +624,17 @@
     return c + u;
   }
 
+  function applyValidity(){
+    var conception = document.querySelector('input[name="conception"]:checked').value;
+    var isInvalidCombo = (conception === 'C');
+    curationZero.disabled = isInvalidCombo;
+    if(isInvalidCombo && curationZero.checked){
+      curationOne.checked = true;
+    }
+  }
+
   function render(){
+    applyValidity();
     var code = currentCode();
     outMark.textContent = '(G)' + code;
     outMeta.textContent = '# genmark: ' + code;
