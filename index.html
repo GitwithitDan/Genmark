@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GENMARK — The mark for who made this</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -362,7 +363,7 @@
       </dl>
       <div class="stamp">
         <span class="genmark-mark" aria-hidden="true">G</span>
-        <span class="stamp-code">Fully human-authored, fully judged &rarr; <b>(G)H2</b></span>
+        <span class="stamp-code">Fully human-authored, human-refined &rarr; <b>(G)H2</b></span>
       </div>
     </div>
   </div>
@@ -376,7 +377,7 @@
       <p>Existing disclosure frameworks are built for academic manuscripts, demand paragraph-length statements, and stop at the edge of plain text. GENMARK is built for everything else &mdash; a photo, a product label, a podcast description, a line of code.</p>
     </div>
     <div class="purpose-cols">
-      <p><span class="not-mark">What it does:</span> declares, in two characters, where an idea originated and how much a human judged the final result &mdash; on the artifact itself, at a glance.</p>
+      <p><span class="not-mark">What it does:</span> declares, in two characters, where an idea originated and how much a human shaped the final result &mdash; on the artifact itself, at a glance.</p>
       <p><span class="not-mark">What it doesn&rsquo;t do:</span> rank the work, assert ownership, or detect anything. It runs on the same honor system as &copy; and &trade; &mdash; a claim the maker chooses to make.</p>
     </div>
   </div>
@@ -395,9 +396,9 @@
         <thead>
           <tr>
             <th scope="col">Conception &darr; / Curation &rarr;</th>
-            <th scope="col">2 &mdash; Fully judged</th>
-            <th scope="col">1 &mdash; Lightly reviewed</th>
-            <th scope="col">0 &mdash; No curation</th>
+            <th scope="col">2 &mdash; Human-refined</th>
+            <th scope="col">1 &mdash; Human-checked</th>
+            <th scope="col">0 &mdash; Unreviewed</th>
           </tr>
         </thead>
         <tbody>
@@ -422,7 +423,7 @@
         </tbody>
       </table>
     </div>
-    <div class="axis-labels"><span>Conception &mdash; where the idea originated</span><span>Curation &mdash; how much a human judged the result</span></div>
+    <div class="axis-labels"><span>Conception &mdash; where the idea originated</span><span>Curation &mdash; how much a human shaped the result</span></div>
 
     <div class="special-codes">
       <div class="chip"><span class="genmark-code">(G)HH</span> Full human authorship, no AI involved at any stage.</div>
@@ -453,11 +454,11 @@
         </div>
         <div class="control-group">
           <fieldset>
-            <legend>Curation &mdash; how much was it judged?</legend>
+            <legend>Curation &mdash; how much did a human shape it?</legend>
             <div class="option-row" id="curation-options">
-              <label><input type="radio" name="curation" value="2" checked> 2 <span class="opt-desc">Fully judged</span></label>
-              <label><input type="radio" name="curation" value="1"> 1 <span class="opt-desc">Lightly reviewed</span></label>
-              <label><input type="radio" name="curation" value="0"> 0 <span class="opt-desc">No curation</span></label>
+              <label><input type="radio" name="curation" value="2" checked> 2 <span class="opt-desc">Human-refined</span></label>
+              <label><input type="radio" name="curation" value="1"> 1 <span class="opt-desc">Human-checked</span></label>
+              <label><input type="radio" name="curation" value="0"> 0 <span class="opt-desc">Unreviewed</span></label>
             </div>
           </fieldset>
         </div>
@@ -509,14 +510,14 @@
         </thead>
         <tbody>
           <tr><td>(G)HH</td><td>Human-made, no AI involvement</td><td>Optional &mdash; use to assert human origin where AI might be assumed.</td></tr>
-          <tr><td>(G)H2</td><td>Human-conceived, fully judged</td><td>Recommended for content presented as original authored work.</td></tr>
-          <tr><td>(G)H1</td><td>Human-conceived, lightly reviewed</td><td>Required where human authorship would otherwise be assumed.</td></tr>
-          <tr><td>(G)H0</td><td>Human-conceived, no curation</td><td>Required &mdash; human originated the concept, AI determined the result.</td></tr>
-          <tr><td>(G)C2</td><td>Co-conceived, fully judged</td><td>Required &mdash; collaborative origin should be declared.</td></tr>
-          <tr><td>(G)C1</td><td>Co-conceived, lightly reviewed</td><td>Required.</td></tr>
+          <tr><td>(G)H2</td><td>Human-conceived, human-refined</td><td>Recommended for content presented as original authored work.</td></tr>
+          <tr><td>(G)H1</td><td>Human-conceived, human-checked</td><td>Required where human authorship would otherwise be assumed.</td></tr>
+          <tr><td>(G)H0</td><td>Human-conceived, unreviewed</td><td>Required &mdash; human originated the concept, AI determined the result.</td></tr>
+          <tr><td>(G)C2</td><td>Co-conceived, human-refined</td><td>Required &mdash; collaborative origin should be declared.</td></tr>
+          <tr><td>(G)C1</td><td>Co-conceived, human-checked</td><td>Required.</td></tr>
           <tr><td>(G)A2</td><td>AI-conceived, human finished</td><td>Recommended, even when human craft dominates the final result.</td></tr>
           <tr><td>(G)A1</td><td>AI-conceived, human curated</td><td>Required.</td></tr>
-          <tr><td>(G)A0</td><td>AI-conceived, no curation</td><td>Required wherever human authorship might otherwise be assumed.</td></tr>
+          <tr><td>(G)A0</td><td>AI-conceived, unreviewed</td><td>Required wherever human authorship might otherwise be assumed.</td></tr>
           <tr><td>(G)noAI</td><td>No AI involvement, full human authorship</td><td>Use to assert human origin explicitly &mdash; the inverse disclosure case.</td></tr>
         </tbody>
       </table>
